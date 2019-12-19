@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
+    <title>Alert | Off</title>
+
+  </head>
+  <body>
+
+    <div class="overlay"></div>
+
+    <div class="container-fluid">
+      <div class="row h-100 justify-content-center align-items-end">
+
+        <!-- <div class="side-bar">
+
+        </div> -->
+        
+        <!-- <div class="col-4 col-md-3 col-xl-12 align-self-center text-center">
+
+          <div class="row">
+            <div class="col">
+                <div class="message-box">
+                    <h1>Messages</h1>
+                    <div id="messages"></div>
+                    <form action="">
+                      <input id="m" autocomplete="off" /><button>Send</button>
+                    </form>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="stats-box">
+                    <h1>Stats</h1>
+                    <div>Time On: <span id="timeCount">0</span>s</div>
+                    <div>Turned On: <span id="onCount">0</span> times</div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="users-box">
+                    <h1>User List</h1>
+                    <span id="connections"></span>  
+                  </div>
+            </div>
+          </div>
+
+        </div> -->
+
+        <div class="col-8 col-md-6 col-xl-10 text-center">
+
+          <div class="svg-container">
+            <svg id="light-off" class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9.25 22h5.5l-1.451 1.659c-.19.216-.465.341-.753.341h-1.093c-.288 0-.562-.125-.752-.341l-1.451-1.659zm-.535-5.514c.019.171.035.342.035.514h6.5c0-3.171 3.483-5.91 3.727-9.84l-10.262 9.326zm5.785 1.514h-5c-.276 0-.5.224-.5.5s.224.5.5.5h5c.276 0 .5-.224.5-.5s-.224-.5-.5-.5zm0 2h-5c-.276 0-.5.224-.5.5s.224.5.5.5h5c.276 0 .5-.224.5-.5s-.224-.5-.5-.5zm7.149-20l-3.594 3.263c-1.268-2.116-3.654-3.263-6.059-3.263-3.498 0-6.996 2.391-6.996 6.734 0 2.427 1.268 4.396 2.33 6.267l-6.33 5.733 1.346 1.5 20.654-18.75-1.351-1.484z"/></svg>
+            <svg id="light-on" class="d-none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.734c0 4.164-3.75 6.98-3.75 10.266h-6.5c0-3.286-3.75-6.103-3.75-10.266 0-4.343 3.498-6.734 6.996-6.734 3.502 0 7.004 2.394 7.004 6.734zm-4.5 11.266h-5c-.276 0-.5.224-.5.5s.224.5.5.5h5c.276 0 .5-.224.5-.5s-.224-.5-.5-.5zm0 2h-5c-.276 0-.5.224-.5.5s.224.5.5.5h5c.276 0 .5-.224.5-.5s-.224-.5-.5-.5zm.25 2h-5.5l1.451 1.659c.19.216.465.341.753.341h1.093c.288 0 .562-.125.752-.341l1.451-1.659z"/></svg>
+          </div>
+
+          <!-- <h1>Alert Joey</h1> -->
+
+          <button type="button" class="btn-custom-alert noselect">Push to light</button>
+        </div>
+        
+        <div class="col-12 m-0 p-0">
+          <div class="extra-info">
+
+            <!-- <div class="controls"></div> -->
+
+            <div class="content mb-5">
+
+              <div class="navigation">
+                <span id="choice-stats" class="choice active">Stats</span> - <span id="choice-messages" class="choice">Chat</span><span id="chat-badge" style="font-size: 0.5rem;vertical-align: text-top;" class="badge badge-light">0</span> - <span id="choice-users" class="choice">Users</span>
+              </div>
+
+              <div class="row h-100 m-0">
+
+                <div class="col-12 col-md-4 d-none">
+
+                  <div class="content-box messages">
+                    <h2>Chat</h2>
+                    <div id="messages"></div>
+                    <form class="dual-header" action="">
+                      <input class="form-control" id="m" autocomplete="off" />
+                      <button>Send</button>
+                    </form>
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="content-box stats">
+                    <h2>Stats</h2>
+                    <div class="row justify-content-center">
+                      
+                      <div class="col-6">
+                        <div class="stat">Times On: <br><span id="onCount">0</span></div>
+                      </div>
+                      <div class="col-6">
+                        <div class="stat">Been On: <br><span id="timeCount">0</span>s</div>
+                      </div>
+                      <div class="col-6">
+                        <div class="stat">Cost: <br><$0.01</div>
+                      </div>
+                      <div class="col-6">
+                        <div class="stat">Connections: <br><span id="peopleTotal">0</span> made</div>
+                      </div>
+                      <div class="col-6">
+                        <div class="stat">This Session: <br><span id="buttonPresses">0</span> presses</div>
+                      </div>
+                      <div class="col-6">
+                        <div class="stat">Session Max: <br>0 presses</div>
+                      </div>
+
+                    </div>
+
+                    <!-- <div>Switched On:</div>
+                    <div>Been On:</div>
+                    <div>Cost:</div>
+                    <div>Connections:</div> -->
+
+                  </div>
+                </div>
+                <div class="col-12 col-md-4 d-none">
+                  <div class="content-box users">
+                    <h2>Users</h2>
+                    <span id="connections"></span>  
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="col-12 col-md-3 align-self-center text-center"> -->
+          <!-- <div><span id="status"></span></div> -->
+        <!-- </div> -->
+
+      </div>
+    </dv>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+      $(function () {
+
+        var scrolled = false;
+        var initial = true;
+        var show = 'choice-stats';
+        var messageCount = 0;
+        var buttonPresses = 0;
+
+        $("#choice-stats, #choice-messages, #choice-users").click(function() {
+          show = this.id;
+          console.log(this.id);
+
+          $("#choice-stats, #choice-messages, #choice-users").removeClass('active');
+          $("#" + this.id).addClass('active');
+
+          $('.content-box').parent().addClass('d-none');
+          $('.' + this.id.split("-")[1]).parent().removeClass('d-none');
+        });
+
+        var w = {};
+        w.value = $('body').width();
+
+        if (w.value > 766) {
+          $('.content-box').parent().removeClass('d-none');
+          $('.navigation').addClass('d-none');
+        }
+
+        function updateScroll(){
+            if(!scrolled){
+                var element = document.getElementById("messages");
+                element.scrollTop = element.scrollHeight;
+            }
+        }
+
+        $("#messages").on('scroll', function(){
+            
+            if (initial === true) {
+              initial = false;
+              console.log("Was initial")
+            } else {
+              scrolled=true;
+            }
+
+            // scrolled=true;
+            console.log("User broke scroll lock");
+        });
+        
+        var socket = io();
+
+        // $('.btn-custom-alert').touchstart(function() {
+        //   $('.btn-custom-alert').trigger('mousedown');
+        // })
+
+        // $('.btn-custom-alert').touchend(function() {
+        //   $('.btn-custom-alert').trigger('mouseup');
+        // })
+
+        $('.btn-custom-alert').bind('touchstart mousedown', () => {
+          // console.log('push');
+          // $('#light-off').toggleClass('d-none');
+          // $('#light-on').toggleClass('d-none');
+          
+          socket.emit('click', true);
+          $('#buttonPresses').html(buttonPresses = buttonPresses + 1)
+          // e.preventDefault();
+        }) 
+
+        $('.btn-custom-alert').bind('touchend mouseup mouseout', () => {
+          // console.log('lift');
+          // $('#light-on').toggleClass('d-none');
+          // $('#light-off').toggleClass('d-none');
+          socket.emit('click', false);
+        }) 
+
+        // $('.btn-custom-alert').mousedown(function() {
+        //   // $('.btn-custom-alert').html('Release to shut');
+        //   $('#light-off').toggleClass('d-none');
+        //   $('#light-on').toggleClass('d-none');
+        //   socket.emit('click', true);
+        // })
+
+        // $('.btn-custom-alert').mouseup(function() {
+        //   // $('.btn-custom-alert').html('Hold to light');
+        //   $('#light-on').toggleClass('d-none');
+        //   $('#light-off').toggleClass('d-none');
+        //   socket.emit('click', false);
+        // })
+
+        // function light() {
+          
+        // }
+
+        // function unLight() {
+        //   $('.btn-custom-alrt').html('Hold to light');
+        // }
+    
+        $('form').submit(function(e){
+          e.preventDefault(); // prevents page reloading
+
+          socket.emit('chat message', $('#m').val());
+          $('#m').val('');
+          return false;
+
+        });
+
+        socket.on('chat message', function(msg){
+
+          $('#messages').append($('<div>').text(msg));
+          updateScroll();
+          messageCount = messageCount + 1;
+
+          $('#chat-badge').html(messageCount);
+
+          $('#chat-badge').addClass('badge-success');
+          $('#chat-badge').removeClass('badge-light');
+          
+
+          var interval = setInterval(function() {
+            $('#chat-badge').addClass('badge-light');
+            $('#chat-badge').removeClass('badge-success');
+            clearInterval(interval);
+          }, 500);
+
+        });
+
+        socket.on('status', function(connections, lightStatus, switchedOn, timeCount, peopleConnectedTotal){
+          console.log(connections);
+
+          // console.log(switchedOn);
+          // <span id="onCount">0</span>
+          $('#onCount').html(switchedOn);
+          $('#timeCount').html(timeCount / 10);
+          $('#peopleTotal').html(peopleConnectedTotal);
+
+          // $('#status').text(lightStatus)
+
+          // $('#connections').text(JSON.stringify(connections));
+
+          $('#connections').text("");
+          connections.map(connection => {
+            $('#connections').append($('<div>').html(connection.id + ' | ' + (!connection.pushingButton ? "<span class=\"badge badge-light\">Off</span>" : "<span class=\"badge badge-custom-yellow\">On</span>") ));
+          })
+
+          // $('#connections').text( connections.map((connection) => {
+          //   return ("Hello")
+          // })
+
+          if (lightStatus === true) {
+            $('.overlay').removeClass('dim');
+
+            $('#light-off').addClass('d-none');
+            $('#light-on').removeClass('d-none');
+          } else {
+            $('.overlay').addClass('dim');
+
+            $('#light-off').removeClass('d-none');
+            $('#light-on').addClass('d-none');
+          }
+
+        });
+    
+      });
+    </script>
+  </body>
+</html>

@@ -12,9 +12,9 @@
 /build
 
 # credentials
-.env
-.env.production
-.env.development
+# .env
+# .env.production
+# .env.development
 
 # misc
 .DS_Store
